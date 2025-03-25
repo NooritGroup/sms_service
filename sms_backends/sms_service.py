@@ -3,7 +3,6 @@ from typing import Dict, List, Optional, Union
 
 
 class SMSService:
-    """کلاسی برای مدیریت ارسال و دریافت وضعیت پیامک از طریق REST API"""
 
     def __init__(self, username: str, password: str, base_url: str = "https://sms.3300.ir/api"):
         self.username = username
@@ -13,10 +12,9 @@ class SMSService:
         self.status_endpoint = f"{self.base_url}/wsStates.ashx"
 
     def _send_request(self, endpoint: str, data: Dict) -> Dict:
-        """ارسال درخواست به سرور و مدیریت پاسخ"""
         try:
             response = requests.post(endpoint, data=data)
-            response.raise_for_status()  # اگه خطایی بود، استثنا پرت می‌کنه
+            response.raise_for_status()
             return response.json()
         except requests.RequestException as e:
             return {"status": "error", "msg": f"Request failed: {str(e)}"}
