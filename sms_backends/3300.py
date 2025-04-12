@@ -41,6 +41,8 @@ class SMSService(BaseSMSBackend):
 
         if line:
             data["line"] = line
+        else:
+            data["line"] = "983000610330"
         if line2:
             data["line2"] = line2
 
@@ -61,13 +63,12 @@ class SMSService(BaseSMSBackend):
 
 if __name__ == "__main__":
     # تنظیمات اولیه
-    sms = SMSService(username="USERNAME", password="PASSWORD")
+    sms = SMSService(username="npc32499", password="Labbayk@SMS$1396")
 
     # سناریوی ۱: ارسال پیامک تکی
     result = sms.send(
         phone="989395213300",
         message="سلام، این یک تست است",
-        line="9830003300"
     )
     print("ارسال تکی:", result)
 
@@ -83,7 +84,7 @@ if __name__ == "__main__":
     result = sms.send(
         phone="989395213300",
         message="تست خط دوم",
-        line="9830003300",
+        line="983000610330",
         line2="10003300"
     )
     print("ارسال با خط دوم:", result)
@@ -92,7 +93,7 @@ if __name__ == "__main__":
     result = sms.send(
         phone="989395213300",
         message="تست چلچله",
-        line="9830003300",
+        line="983000610330",
         sms_type=1
     )
     print("ارسال با چلچله:", result)
@@ -101,7 +102,7 @@ if __name__ == "__main__":
     result = sms.send(
         phone="989395213300",
         message="تست نگین رایانه",
-        line="9830003300",
+        line="983000610330",
         sms_type=2,
         template=0
     )
