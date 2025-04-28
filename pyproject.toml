@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=61.1.0", "wheel>=0.45.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sms_service"
+dynamic = ['version']
+description = "This library created sms services"
+dependencies = [
+    "django>=5.0",
+    "requests>=2"
+]
+readme = "README.md"
+authors = [
+    { name = "Alireza", email = "alirezam5803@gmail.com" }
+]
+license = { text = "BSD 3-Clause License" }
+requires-python = ">=3.10"
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Environment :: Web Environment",
+    "Framework :: Django",
+    "Framework :: Django :: 5.0",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+
+[tool.setuptools.dynamic]
+version = { attr = "sms_backends.__version__" }
+
+[project.optional-dependencies]
+djangorestframework = ["djangorestframework>=3"]
+
+[project.urls]
+Repository = "https://github.com/NooritGroup/sms_service.git"
+Homepage = "https://github.com/NooritGroup/sms_service.git"
+
+[tool.setuptools.packages.find]
+include = ["sms_backends"]

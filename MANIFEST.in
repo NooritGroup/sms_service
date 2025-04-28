@@ -1,0 +1,7 @@
+include README.md
+include LICENSE.md
+recursive-include sms_backends/locale *.mo
+recursive-include sms_backends *.py
+global-exclude __pycache__
+global-exclude *.py[co]
+recursive-exclude server *
